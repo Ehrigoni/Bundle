@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const { uuid, isUuid } = require('uuidv4');
 
 const app = express();
-
+app.use(cors());//dessa forma permite qualquer tipo de acesso.
+//Mais adiante dá para configurar a origem da aplicação cliente.
 app.use(express.json());
 /**
  * GET: Buscar informações do back-end
@@ -55,19 +57,19 @@ app.use('/projects/:id', validateProjectId);
 
 
 app.get('/projects', (request, response) => {
-    const { name } = request.query;
+    const { title } = request.query;
     
-    const results = name
-        ? projects.filter(project => project.name.includes(name))
+    const results = title
+        ? projects.filter(project => project.title.includes(title))
         : projects;
 
     return response.json(results);
 });
 
 app.post('/projects', (request, response) => {
-    const { name, idade, celular } = request.body;
+    const { title, owner, techs } = request.body;
      
-    const project = { id: uuid(), name, idade, celular };
+    const project = { id: uuid(), title, owner, techs };
     
     projects.push(project);
     
@@ -79,7 +81,7 @@ app.put('/projects/:id', (request, response) => {
     console.log(params);
     */
     const { id } = request.params;
-    const { name, idade, celular } = request.body;
+    const { title, owner, techs } = request.body;
 
     const projectIndex = projects.findIndex(project => project.id == id);
 
@@ -89,9 +91,9 @@ app.put('/projects/:id', (request, response) => {
 
     const project = {
         id,
-        name,
-        idade,
-        celular,
+        title,
+        owner,
+        techs,
     };
 
     projects[projectIndex] = project;

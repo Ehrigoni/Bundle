@@ -90,23 +90,10 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _soma__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./soma */ \"./src/soma.js\");\n\n\nconsole.log(Object(_soma__WEBPACK_IMPORTED_MODULE_0__[\"soma\"])(1, 3));\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/soma.js":
-/*!*********************!*\
-  !*** ./src/soma.js ***!
-  \*********************/
-/*! exports provided: soma */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"soma\", function() { return soma; });\nconst soma = (a, b) => {\n    return a + b;\n}\n\n//# sourceURL=webpack:///./src/soma.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (8:7)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| //JSX: HTML dentro do JavaScript (Javascript XML)\\n| \\n> render(<App />, document.getElementById('app'));\\n| \");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
